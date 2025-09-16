@@ -1,2 +1,2 @@
 # JavaScript-Programs
-Config files for my GitHub profile.
+JavaScript programs (All you NEED)
