@@ -80,6 +80,7 @@ console.log(valueInNumber)
 // null => false , 
 // undefined => false
 
+
 let someNumber = 34
 let stringNumber = String(someNumber)
 console.log(typeof stringNumber)
