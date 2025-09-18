@@ -86,3 +86,60 @@ function loginUserMessage(username = "Soumya"){ // default parameter value {
   return `${username} just logged in`;
 }
 console.log(loginUserMessage()); // Soumya just logged in // because default parameter value is used
+
+
+function calculateCartPrice(num1) {
+    return num1;
+}
+console.log(calculateCartPrice(200)); // 200
+console.log(calculateCartPrice(100,200,300)); // 100 // extra arguments are ignored
+
+// rest operator : ... (three dots) : used to collect all the arguments into an array
+// rest operator must be the last parameter in the function definition
+
+function calculateCartPrice(...num1) {
+    return num1;
+}
+console.log(calculateCartPrice(200)); // [ 200 ] // rest operator collects all the arguments into an array
+console.log(calculateCartPrice(100,200,300)); // [ 100, 200, 300 ] // rest operator collects all the arguments into an array
+
+
+
+function calculateCartPrice(val1,val2,...num1) {
+    return num1;
+}
+console.log(calculateCartPrice(200)); // [] // rest operator collects all the arguments into an array but there is no argument for rest operator
+console.log(calculateCartPrice(100,200,300,400,500)); // [ 300, 400, 500 ] // rest operator collects all the arguments into an array
+
+// passing object as an argument to a function
+const user = {
+    name: "Soumya",
+    age: 21,
+    location: "India",
+}
+function handleObject(anyuser){ 
+    console.log(`Username is ${anyuser.name} and age is ${anyuser.age}`);
+}
+handleObject(user); // Username is Soumya and age is 25
+
+
+
+
+// passing object as an argument to a function without storing it in a variable
+function handleObject(anyuser){ 
+    console.log(`Username is ${anyuser.name} and age is ${anyuser.age}`);
+}
+handleObject({
+    name: "Soumyadeep",
+    age: 23,
+    location: "USA",
+}) // Username is Soumyadeep and age is 23
+
+
+const newArr = [200,300,400,500]; 
+function returnSecondElement(getArr){
+    return getArr[1];
+}
+console.log(returnSecondElement(newArr)); // 300 // passing array as an argument to a function without storing it in a variable
+
+console.log(returnSecondElement([123,234,345,456])); // 234 // passing array as an argument to a function without storing it in a variable
