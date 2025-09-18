@@ -36,4 +36,3 @@ if (true) {
   console.log(d); // 200
 }
 console.log(d); // 100
-
