@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM | Chai Aur Code</title>
+</head>
+<body style="background-color: black;color:beige;">
+    <div class="parent">
+      <!-- this is a comment -->  
+      <div class="day">Monday</div>
+      <div class="day">Tuesday</div>
+      <div class="day">Wednesday</div>
+      <div class="day">Thursday</div>
+    </div>
+</body>
+
+<script>
+    const parent = document.querySelector(".parent")
+    console.log(parent); // it will display whole parent div because we have selected parent div
+
+    console.log(parent.children[1].innerHTML); // it will display Tuesday because we have accessed 1st index of children of parent div
+
+    for (let i = 0; i < parent.children.length; i++) {
+      console.log(parent.children[i].innerHTML); // it will display all the days one by one
+    }
+
+    parent.children[1].style.color = "orange"; // it will change the text color of Tuesday to orange
+
+    console.log(parent.firstElementChild); // it will display the first child of parent div i.e Monday
+
+    console.log(parent.lastElementChild); // it will display the last child of parent div i.e Thursday
+
+    const dayOne = document.querySelector(".day")
+    console.log(dayOne); // it will display only first div having class day i.e Monday because querySelector always selects the first matching element
+
+    console.log(dayOne.parentElement); // it will display the parent element of dayOne i.e parent div
+
+    console.log(dayOne.nextElementSibling); // it will display the next sibling of dayOne i.e Tuesday
+
+    console.log("NODES: ",parent.childNodes); // it will display all the child nodes of parent div including text nodes (like spaces, line breaks etc.)
+
+    // Note: childNodes includes all nodes (element nodes, text nodes, comment nodes), whereas children includes only element nodes.
+
+    // DOM tree is a representation of the HTML document as a hierarchical structure of nodes. it starts with a single root node (the document) and branches out to represent elements, attributes, and text within the document.
+
+
+    // no of elements in nodelist is calculated including text nodes . For the above example it will be 11 ; 4 divs + 6 test nodes (spaces and line breaks) + 1 comment node
+
+</script>
+
+</html>
