@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chai Aur Code | DOM </title>
+</head>
+<body style="background-color: black;color: white;">
+  <ul class="language">
+    <li>JavaScript</li>
+    <li>Java</li>
+  </ul>
+</body>
+<script>
+  function addLanguage(langName) {
+    const li = document.createElement('li'); // Creating a new li element
+    li.innerHTML = `${langName}`; // Setting the text content of the li
+    document.querySelector('.language').appendChild(li); // Appending the new li to the ul with class 'language'
+  }
+  addLanguage("Python");
+  addLanguage("TypeScript");
+
+
+  function addOptiLanguage(langName) {
+    const li = document.createElement('li'); // Creating a new li element
+    li.appendChild(document.createTextNode(langName)); // Creating and appending a text node to the li
+    document.querySelector('.language').appendChild(li); // Appending the new li to the ul with class 'language'
+  }
+  addOptiLanguage("Golang") 
+  
+  // the second method is more optimized as it creates a text node and appends it to the li element, which is generally more efficient than setting innerHTML, especially when dealing with plain text.
+
+  // Edit
+  const secondLang = document.querySelector("li:nth-child(2)")
+  console.log(secondLang); // it will display the second li element i.e Java
+
+  //secondLang.innerHTML = "Ruby" // Replacing Java with Ruby
+
+  const newli = document.createElement("li")
+  newli.textContent = "Ruby"
+  secondLang.replaceWith(newli) // Replacing Java with Ruby
+  // this method is more efficient and safer as it avoids potential security risks associated with innerHTML and optimal for performance because it directly manipulates the DOM elements without parsing HTML.
+
+  //edit
+  const firstLang = document.querySelector("li:nth-child(1)") // it will select the first li element i.e JavaScript
+  firstLang.outerHTML = "<li>Matlab</li>" // Replacing JavaScript with Matlab using outerHTML
+
+  //remove
+  const lastLang = document.querySelector("li:last-child") // it will select the last li element i.e Golang
+  lastLang.remove() // it will remove the last li element
+
+</script>
+</html>
